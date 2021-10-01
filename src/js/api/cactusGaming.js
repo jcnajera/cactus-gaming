@@ -9,7 +9,7 @@ async function getCactusGamingApi(request) {
     try {
         const webResponse = await makeAxiosRequest(request);
 
-        const {status} = webResponse;
+        const {status, data} = webResponse;
 
         if (status === 200) {
             response.success = true;

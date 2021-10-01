@@ -11,7 +11,15 @@ function App() {
     }, []);
 
     function handleLogicCallback(params) {
+        const { data, errorType, success } = params;
 
+        if (errorType === 1) {
+            setOtherError(true);
+        } else if (errorType === 2) {
+            setUserError(true);
+        }
+
+        setRenderFlag(true);
     }
 
 

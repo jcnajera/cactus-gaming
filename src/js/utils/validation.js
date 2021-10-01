@@ -7,13 +7,18 @@ export function validateData(data) {
     return false;
 }
 
-export function validateUser(credentials) {
+
+export function validateCredentials(credentials) {
     try {
         const {user, password} = credentials;
 
-        const validUser = typeof user === "string" && user.trim() !== "";
+        const validUser = validateUser(user);
         return (validUser);
     } catch (ex) {
-        throw "User Invalid"
+        return false;
     }
+}
+
+function validateUser(user) {
+    return typeof user === "string" && user.trim() !== "";
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cactus Gaming</title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <script type="text/javascript" src="<%= chunksFolderUrl %>/env-config.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <% for (var chunkJS in htmlWebpackPlugin.files.js) { %>
+        <script type="text/javascript" src="<%= chunksFolderUrl %>/<%= htmlWebpackPlugin.files.js[chunkJS] %>"></script>
+    <% } %>
+    <% for (var chunkCSS in htmlWebpackPlugin.files.css) { %>
+        <link rel="stylesheet" href="<%= chunksFolderUrl %>/<%= htmlWebpackPlugin.files.css[chunkCSS] %>"></link>
+    <% } %>
+</body>
+</html>
